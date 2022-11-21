@@ -36,3 +36,13 @@ npm run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+
+## modules
+---
+
+### tailwind css
+---
+1. $ yarn add --dev @nuxtjs/tailwindcss
+2. add "modules: ['@nuxtjs/tailwindcss']" in nuxt.config.ts
+3. $ npx tailwindcs init to create tailwind.config.js file
