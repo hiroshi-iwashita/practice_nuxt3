@@ -1,11 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  prefix: "tw-",
   content: [
-    "./app.vue", // <= ドキュメントからさらに追加
-    "./components/**/*.{vue,js}",
+    "./components/**/*.{js,vue,ts}",
     "./layouts/**/*.vue",
     "./pages/**/*.vue",
     "./plugins/**/*.{js,ts}",
+    "./nuxt.config.{js,ts}",
+    "./app.vue",
     "App.{js,ts,vue}",
     "Error.{js,ts,vue}",
     "error.{js,ts,vue}",
@@ -13,10 +15,23 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        primary: defaultTheme.colors.green
-      }
+      // colors: {
+      //   primary: defaultTheme.colors.green
+      // }
     },
   },
-  plugins: [],
+  // daisyui: {
+  //   themes: [
+  //     {
+  //       mytheme: {
+  //         "primary": "#6419E6",
+  //       },
+  //     },
+  //   ],
+  // },
+  
+  plugins: [
+    // require("@tailwindcss/typography"),
+    require("daisyui")
+  ],
 }
