@@ -8,4 +8,7 @@ export default defineNuxtConfig({
             autoprefixer: {},
         },
     },
+    runtimeConfig: {
+        productName: process.env.PRODUCT_NAME,
+    },
 })
