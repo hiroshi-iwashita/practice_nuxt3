@@ -12,15 +12,28 @@
         {{ labelTop }}
       </span>
     </label>
-    <input
+    <select
       v-model.string="modelValue"
-      :type.string="type"
       :name.string="name"
-      :placeholder.string="placeholder"
       :required.boolean="isRequired"
       :disabled.boolean="isDisabled"
-      class="input input-md bg-base-300 w-full"
-    />
+      class="select bg-base-300 w-full"
+    >
+      <option
+        disabled
+        selected
+        value=""
+      >
+        {{ placeholder }}
+      </option>
+      <option
+        v-for="(item, index) in options"
+        :key="index"
+        :value.string="item"
+      >
+        {{item}}
+      </option>
+    </select>
     <label class="label">
       <span class="label-text-alt">
         {{ labelBottom }}
@@ -33,8 +46,8 @@
   // prop
   interface Props {
     modelValue: string;
-    type?: string;
-    name?: string;
+    name: string;
+    options: string[];
     labelTop?: string;
     placeholder?: string;
     isRequired?: boolean;
@@ -47,10 +60,10 @@
   const props = withDefaults(
     defineProps<Props>(), {
       modelValue: '',
-      type: 'text',
       name: '',
+      options:() => [],
       labelTop: '',
-      placeholder: 'Type here',
+      placeholder: 'Pick one',
       isRequired: true,
       isDisabled: false,
       labelBottom: '',
@@ -68,6 +81,14 @@
   const modelValue = computed({
     get: () => props.modelValue,
     set: (value: string) => emit('update:modelValue', value)
+  });
+
+  const placeholder = computed(() => {
+    return props.options.length ? 'Pick one' : 'No options' 
+  });
+
+  const isDisabled = computed(() => {
+    return props.options.length ? props.isDisabled : true 
   });
 
   // classObject
