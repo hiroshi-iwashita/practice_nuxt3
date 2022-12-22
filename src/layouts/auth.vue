@@ -1,17 +1,15 @@
 <template>
   <header>
     <slot name="header">
-      <LayoutDaisyuiIndexHeader />
+      <LayoutAuthLoginHeader />
     </slot>
   </header>
-  <main>
+  <main class="py-4">
     <slot />
   </main>
   <footer> 
     <slot name="footer">
-      <LayoutDaisyuiIndexFooter
-        class="container"
-      />
+      <LayoutAuthLoginFooter />
     </slot>
   </footer>
 </template>
