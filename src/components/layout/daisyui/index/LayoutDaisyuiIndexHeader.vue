@@ -5,7 +5,7 @@
     <div
       class="flex-1 bg-base-100"
     >
-      <a
+      <a href="/"
         class="btn btn-ghost normal-case text-xl"
       >
         {{ config.productName }}
@@ -14,9 +14,11 @@
     <div
       class="flex-none"
     >
-      <ul class="menu menu-horizontal px-1">
-        <li><NuxtLink to="/">Home</NuxtLink></li>
-        <li><NuxtLink to="/auth/login">Login</NuxtLink></li>
+      <ul class="menu menu-horizontal gap-4">
+        <li><NuxtLink to="/" class="link link-hover">Home</NuxtLink></li>
+        <li><NuxtLink to="/auth/login" class="link link-hover">Login</NuxtLink></li>
+        <li><NuxtLink to="/products" class="link link-hover">Products</NuxtLink></li>
+        <li><NuxtLink to="/products/aaa" class="link link-hover">Products</NuxtLink></li>
         <li tabindex="0">
           <a>
             Parent
@@ -89,3 +91,9 @@
   // config
   const config = useRuntimeConfig();
 </script>
+
+<style lang="postcss" scoped>
+  .route-link-exact-active {
+    color: #12b488
+  }
+</style>
