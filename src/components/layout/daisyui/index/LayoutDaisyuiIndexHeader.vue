@@ -8,7 +8,7 @@
       <a href="/"
         class="btn btn-ghost normal-case text-xl"
       >
-        {{ config.productName }}
+        {{ productName }}
       </a>
     </div>
     <div
@@ -89,7 +89,9 @@
 
 <script lang="ts" setup>
   // config
-  const config = useRuntimeConfig();
+  // const config = useRuntimeConfig();
+  const { productName } = useRuntimeConfig()
+
 </script>
 
 <style lang="postcss" scoped>

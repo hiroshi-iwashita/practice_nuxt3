@@ -45,9 +45,9 @@
     }
   })
 
-  const config = useRuntimeConfig();
-  const route = useRoute();
-  console.log(route.path)
+  const { APIBaseURL } = useRuntimeConfig();
+  const { path } = useRoute();
+  console.log(path)
 
   // const { data: users, pending, error, refresh } = await useAsyncData(
   //     '/users/all',
@@ -67,7 +67,7 @@
   // );
 
   const { data: users, pending, error, refresh } = await useLazyFetch(
-      `${config.APIBaseURL}/users/all`,
+      `${APIBaseURL}/users/all`,
       {
           pick: ['data'],
           onResponse({ request, response, options }) {
