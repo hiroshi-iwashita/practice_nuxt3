@@ -18,7 +18,7 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       "primary": "#0f766e",
-      "secondary": "#134e4a",
+      "secondary": "#01ADD8",
       "accent": "#2dd4bf",
       "neutral": "#1c1917",
       "base-100": "#292524",
@@ -30,11 +30,11 @@ module.exports = {
     container: {
       center: true,
       padding: {
-        DEFAULT: '1rem',
-        sm: '2rem',
-        lg: '4rem',
-        xl: '5rem',
-        '2xl': '6rem',
+        DEFAULT: '2rem',
+        // sm: '2rem',
+        // lg: '4rem',
+        // xl: '5rem',
+        // '2xl': '6rem',
       }
     },
   },
@@ -59,7 +59,7 @@ module.exports = {
       {
         mytheme: {
           "primary": "#0f766e",
-          "secondary": "#134e4a",
+          "secondary": "#01ADD8",
           "accent": "#2dd4bf",
           "neutral": "#1c1917",
           "base-100": "#292524",
