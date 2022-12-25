@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
     app: {
         head: {
-            title: 'Nuxt Dojo',
+            title: 'Nuxt Practice',
             meta: [
                 { name: 'description', content: 'Everything about Nuxt 3'}
             ],
@@ -11,7 +11,10 @@ export default defineNuxtConfig({
             ]
         }
     },
-    pages: true,
+    routeRules: {
+        // Render these routes with SPA
+        // '/fetch': { ssr: true },
+    },
     css: ['~/assets/css/main.css'],
     postcss: {
         plugins: {
@@ -20,9 +23,15 @@ export default defineNuxtConfig({
         },
     },
     runtimeConfig: {
+        app: {
+            baseURL: "/",
+            buildAssetsDir: "/_nuxt/",
+            cdnURL: ""
+        },
         public: {
-            productName: process.env.PRODUCT_NAME,
-            APIBaseURL: process.env.API_BASE_URL,
-        }
+            baseURL: '',
+            productName: ''
+        },
+        apiBaseURL: ''
     },
 })
