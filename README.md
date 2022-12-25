@@ -1,6 +1,7 @@
 # Nuxt 3 Minimal Starter
 ---
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+---
 
 -  [Nuxt 3を使いこなすために基礎から徹底解説(2022.12.2)](https://reffect.co.jp/vue/nuxt3)
 -  [Nuxt 3 の useFetch() と useAsyncData() の使い方(2022.11.20)](https://zenn.dev/coedo/articles/cc000738a0f069)
