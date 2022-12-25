@@ -17,11 +17,11 @@
       <ul class="menu menu-horizontal gap-4">
         <li><NuxtLink to="/" class="link link-hover">Home</NuxtLink></li>
         <li><NuxtLink to="/auth/login" class="link link-hover">Login</NuxtLink></li>
-        <li><NuxtLink to="/products" class="link link-hover">Products</NuxtLink></li>
-        <li><NuxtLink to="/products/aaa" class="link link-hover">Products</NuxtLink></li>
+        <!-- <li><NuxtLink to="/products" class="link link-hover">Products</NuxtLink></li>
+        <li><NuxtLink to="/products/aaa" class="link link-hover">Products</NuxtLink></li> -->
         <li tabindex="0">
           <a>
-            Parent
+            Fetch
             <svg
               class="fill-current"
               xmlns="http://www.w3.org/2000/svg"
@@ -35,8 +35,9 @@
             </svg>
           </a>
           <ul class="p-2 bg-base-100">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
+            <li><NuxtLink to="/fetch" class="link link-hover">fetch</NuxtLink></li>
+            <li><NuxtLink to="/fetch/useFetch" class="link link-hover">useFetch</NuxtLink></li>
+            <li><NuxtLink to="/fetch/useAsyncData" class="link link-hover">useAsyncData</NuxtLink></li>
           </ul>
         </li>
       </ul>
@@ -89,7 +90,6 @@
 
 <script lang="ts" setup>
   // config
-  // const config = useRuntimeConfig();
   const { productName } = useRuntimeConfig()
 
 </script>
