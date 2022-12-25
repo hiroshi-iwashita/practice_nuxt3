@@ -1,17 +1,15 @@
 <template>
   <header>
     <slot name="header">
-      <LayoutDefaultHeader />
+      <LayoutNuxtHeader />
     </slot>
   </header>
-  <main class="container" >
+  <main class="container py-8" >
     <slot />
   </main>
   <footer>
     <slot name="footer">
-      <LayoutDefaultFooter
-        class="absolute bottom-0 left-0"
-      />
+      <LayoutDefaultFooter />
     </slot>
   </footer>
 </template>

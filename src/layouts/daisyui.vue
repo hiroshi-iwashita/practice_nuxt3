@@ -4,7 +4,7 @@
       <LayoutDaisyuiIndexHeader />
     </slot>
   </header>
-  <main>
+  <main class="container" >
     <slot />
   </main>
   <footer> 
