@@ -2,22 +2,26 @@
   <div
     class="navbar bg-base-100"
   >
+    <!-- left section of navbar -->
     <div
       class="flex-1"
     >
       <a href="/"
         class="btn btn-ghost normal-case"
       >
-        <LayoutCommonProductTitle />
+        <LayoutsTemplatesProductTitle />
       </a>
     </div>
+
+    <!-- right section of navbar -->
     <div
       class="flex-none gap-2 px-4"
     >
-      <LayoutCommonHeaderMenu />
+      <!-- menu - pulldown -->
+      <LayoutsTemplatesHeaderTextMenus />
 
-      <LayoutCommonHeaderIcons />
-
+      <!-- menu - icons -->
+      <LayoutsElementsHeaderIcons /> 
     </div>
   </div>
 </template>
