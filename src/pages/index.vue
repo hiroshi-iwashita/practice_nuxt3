@@ -1,7 +1,6 @@
 <template>
   <div>
-    <PageBreadcrumbs />
-
+    <TemplatesBreadcrumbs />
   </div>
 </template>
 

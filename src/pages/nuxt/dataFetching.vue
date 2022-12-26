@@ -1,7 +1,7 @@
 <template>
   <div>
-    <PageBreadcrumbs
-      :contents="breadcrumbsContents"
+    <TemplatesBreadcrumbs
+      :items="breadCrumbsContents"
     />
 
     <div class="tabs">
@@ -65,14 +65,14 @@
 
 
 <script lang="ts" setup>
-  import breadCrumbsContents from "~~/configs/components/breadCrumbs";
+  import breadCrumbsItems from "~~/configs/components/templates/breadCrumbs/nuxtDataFetching";
 
   definePageMeta({
     layout: 'nuxt',
   });
 
   // Breadcrumbs
-  const breadcrumbsContents = reactive(breadCrumbsContents.nuxtDataFetching);
+  const breadCrumbsContents = reactive(breadCrumbsItems);
 
   const {
     data,

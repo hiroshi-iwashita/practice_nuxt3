@@ -1,7 +1,7 @@
 <template>
   <header>
     <slot name="header">
-      <LayoutNuxtHeader />
+      <LayoutsNuxtHeader />
     </slot>
   </header>
   <main class="container py-8" >
@@ -9,7 +9,7 @@
   </main>
   <footer>
     <slot name="footer">
-      <LayoutDefaultFooter />
+      <LayoutsDefaultFooter />
     </slot>
   </footer>
 </template>

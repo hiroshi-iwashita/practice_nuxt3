@@ -1,7 +1,7 @@
 <template>
   <div>
-    <PageBreadcrumbs
-      :contents="breadcrumbsContents"
+    <TemplatesBreadcrumbs
+      :items="breadCrumbsContents"
     />
 
     <div v-if="pending">Loading......</div>
@@ -14,14 +14,14 @@
 
 
 <script lang="ts" setup>
-  import breadCrumbsContents from "~~/configs/components/breadCrumbs";
+  import breadCrumbsItems from "~~/configs/components/templates/breadCrumbs/nuxt";
 
   definePageMeta({
     layout: 'nuxt',
   });
 
   // Breadcrumbs
-  const breadcrumbsContents = reactive(breadCrumbsContents.nuxt);
+  const breadCrumbsContents = reactive(breadCrumbsItems);
 
   const {
     data,
