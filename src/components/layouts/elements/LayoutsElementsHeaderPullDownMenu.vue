@@ -14,7 +14,7 @@
         />
       </svg>
     </a>
-    <ul class="p-2 bg-base-100">
+    <ul class="p-2 bg-base-300">
       <template
         v-for="(pullDown, index) in menu.pullDowns"
         :key="index"
@@ -40,17 +40,16 @@
 </template>
 
 <script lang="ts" setup>
-  // import { TLayoutsElementsHeaderPullDownMenu } from "~~/types/components/templates/TLayoutsTemplatesHeaderTextMenus";
+  import { TLayoutsElementsHeaderPullDownMenu } from "~~/types/components/templates/TLayoutsTemplatesHeaderTextMenus";
 
   // prop
   interface Props {
-    menu: object
+    menu: TLayoutsElementsHeaderPullDownMenu
   }
 
   const props = withDefaults(
     defineProps<Props>(), {
-      menu: () => {}
+      menu: () => <TLayoutsElementsHeaderPullDownMenu>{}
     }
   );
-
 </script>

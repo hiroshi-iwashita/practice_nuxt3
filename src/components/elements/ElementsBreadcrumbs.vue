@@ -15,16 +15,16 @@
 </template>
 
 <script lang="ts" setup>
-  import { TBreadCrumbs } from "~~/types/components/templates/TBreadCrumbs";
+  import { TElementsBreadCrumbs } from "~~/types/components/elements/breadCrumbs/TElementsBreadCrumbs";
 
   // prop
   interface Props {
-    item: TBreadCrumbs
-  }
+    item: TElementsBreadCrumbs
+  };
 
   const props = withDefaults(
     defineProps<Props>(), {
-      item: () => <TBreadCrumbs>{},
+      item: () => <TElementsBreadCrumbs>{},
     }
   );
 

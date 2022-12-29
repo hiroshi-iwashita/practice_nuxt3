@@ -9,12 +9,12 @@ export default ([
     }
   },
   {
-    value: 'dataFetching',
+    value: 'form',
     link: false,
-    path: '/nuxt/dataFetching-users',
+    path: '/nuxt/form',
     text: {
-      en: 'Data Fetching',
-      ja: 'データフェッチング'
+      en: 'Form',
+      ja: 'フォーム'
     }
   },
 ]);

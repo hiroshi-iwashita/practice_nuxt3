@@ -24,13 +24,13 @@
 </template>
 
 <script lang="ts" setup>
-  import { TBreadCrumbs } from "~~/types/components/templates/TBreadCrumbs";
+  import { TElementsBreadCrumbs } from "~~/types/components/elements/breadCrumbs/TElementsBreadCrumbs";
 
   // prop
   interface Props {
-    items?: TBreadCrumbs[]
+    items?: TElementsBreadCrumbs[]
     fontSize?: string
-  }
+  };
 
   const props = withDefaults(
     defineProps<Props>(), {
@@ -38,19 +38,4 @@
       fontSize: 'md'
     }
   );
-
-  // Dynamic components
-  const NuxtLink = resolveComponent('NuxtLink')
-
-  // classObject
-  const classObject = computed(() => {
-    return {
-      'text-xs' : props.fontSize === 'xs',
-      'text-sm' : props.fontSize === 'sm',
-      'text-md' : props.fontSize === 'md',
-      'text-lg' : props.fontSize === 'lg',
-      'text-xl' : props.fontSize === 'xl'
-    }
-  })
-
 </script>

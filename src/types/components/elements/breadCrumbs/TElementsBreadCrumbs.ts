@@ -1,4 +1,4 @@
-export type TBreadCrumbs = {
+export type TElementsBreadCrumbs = {
     value: string;
     link: boolean;
     path: string;

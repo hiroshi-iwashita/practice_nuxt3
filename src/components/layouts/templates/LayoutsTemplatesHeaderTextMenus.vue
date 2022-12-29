@@ -21,12 +21,11 @@
 
 <script lang="ts" setup>
   import items from "~~/configs/components/templates/layoutsTemplatesHeaderTextMenus/nuxtDataFetching";
-  // import { TLayoutsElementsHeaderPullDownMenu } from "~~/types/components/templates/TLayoutsTemplatesHeaderTextMenus";
-
+  import { TLayoutsElementsHeaderPullDownMenu } from "~~/types/components/templates/TLayoutsTemplatesHeaderTextMenus";
 
   // prop
   interface Props {
-    menus: []
+    menus: TLayoutsElementsHeaderPullDownMenu[]
   }
 
   const props = withDefaults(
@@ -34,5 +33,4 @@
       menus: () => items
     }
   );
-
 </script>

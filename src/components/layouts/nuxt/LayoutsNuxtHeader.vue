@@ -27,9 +27,6 @@
 </template>
 
 <script lang="ts" setup>
-  // config
-  const { productName } = useRuntimeConfig()
-
 </script>
 
 <style lang="postcss" scoped>

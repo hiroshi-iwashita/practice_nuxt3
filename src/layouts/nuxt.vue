@@ -1,10 +1,12 @@
-<template>
+<template class="relative">
   <header>
     <slot name="header">
-      <LayoutsNuxtHeader />
+      <LayoutsNuxtHeader
+        class="fixed top-0 z-30"
+      />
     </slot>
   </header>
-  <main class="container py-8" >
+  <main class="container pt-24 pb-12 min-h-screen">
     <slot />
   </main>
   <footer>

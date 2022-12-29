@@ -4,6 +4,7 @@
     :class="classObject"
   >
     <label
+      v-if="labelTop !== ''"
       class="label"
     >
       <span
@@ -21,7 +22,10 @@
       :disabled.boolean="isDisabled"
       class="input input-md bg-base-300 w-full"
     />
-    <label class="label">
+    <label
+      v-if="labelBottom !== ''"
+      class="label"
+    >
       <span class="label-text-alt">
         {{ labelBottom }}
       </span>

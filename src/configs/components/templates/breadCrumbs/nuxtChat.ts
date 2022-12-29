@@ -9,12 +9,12 @@ export default ([
     }
   },
   {
-    value: 'dataFetching',
+    value: 'chat',
     link: false,
-    path: '/nuxt/dataFetching-users',
+    path: '/nuxt/chat',
     text: {
-      en: 'Data Fetching',
-      ja: 'データフェッチング'
+      en: 'Chat',
+      ja: 'チャット'
     }
   },
 ]);

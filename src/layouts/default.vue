@@ -1,7 +1,7 @@
 <template>
   <header>
     <slot name="header">
-      <LayoutDefaultHeader />
+      <LayoutsDefaultHeader />
     </slot>
   </header>
   <main class="container" >
@@ -9,7 +9,7 @@
   </main>
   <footer>
     <slot name="footer">
-      <LayoutDefaultFooter
+      <LayoutsDefaultFooter
         class="absolute bottom-0 left-0"
       />
     </slot>
