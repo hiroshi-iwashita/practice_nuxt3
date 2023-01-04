@@ -8,7 +8,7 @@ export default ([
         subMenus: [
           {
             title: 'Form',
-            to: '/nuxt/form-1'
+            to: '/nuxt/form'
           },
           {
             title: 'Data Fetching',

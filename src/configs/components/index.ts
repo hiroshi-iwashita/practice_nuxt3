@@ -63,13 +63,14 @@ const FormSelect = {
             :name="formSelect.name"
             :options="formSelect.options"
             :label-top="formSelect.labelTop"
-            :placeholder="formSelect.placeholder"                    
+            :placeholder="formSelect.placeholder"
             :is-required="formSelect.isRequired"
             :is-disabled="formSelect.isDisabled"
             :label-bottom="formSelect.labelBottom"
             :width="formSelect.width"
             :max-width="formSelect.maxWidth"
-        @update:model-value="testFormSelect($event)"
+            @update:model-value="testFormSelect($event)"
+        />
     `,
     script: `
         const formSelect = reactive({

@@ -3,21 +3,18 @@
     class="form-control"
     :class="classObject"
   >
-    <label
-      class="label"
-    >
-      <span
-        class="label-text"
-      >
+    <label class="label cursor-pointer">
+      <span class="label-text">
         {{ labelTop }}
       </span>
     </label>
     <input
-      v-model.boolean="modelValue"
+      v-model="modelValue"
       type="checkbox"
-      :required.boolean="isRequired"
-      :disabled.boolean="isDisabled"
-      class="checkbox bg-base-300 checkbox-secondary" 
+      :name="name"
+      :disabled="isDisabled"
+      :checked="isChecked"
+      class="checkbox bg-base-100 checkbox-primary" 
     />
     <label class="label">
       <span class="label-text-alt">
@@ -28,21 +25,25 @@
 </template>
 
 <script lang="ts" setup>
+  import { TElementsFormCheckbox } from "~~/types/components/elements/form/TElementsFormCheckbox";
+
   // prop
   interface Props {
-    modelValue: boolean;
-    labelTop?: string;
-    isRequired?: boolean;
-    isDisabled?: boolean;
-    labelBottom?: string;
+    modelValue: TElementsFormCheckbox['value'];
+    name?: TElementsFormCheckbox['name'];
+    isDisabled?: TElementsFormCheckbox['isDisabled'];
+    isChecked?: TElementsFormCheckbox['isChecked'];
+    labelTop?: TElementsFormCheckbox['labelTop'];
+    labelBottom?: TElementsFormCheckbox['labelBottom'];
   }
 
   const props = withDefaults(
     defineProps<Props>(), {
       modelValue: false,
-      labelTop: '',
-      isRequired: true,
+      name: '',
       isDisabled: false,
+      isChecked: false,
+      labelTop: '',
       labelBottom: '',
     }
   );
@@ -55,7 +56,7 @@
 
   const modelValue = computed({
     get: () => props.modelValue,
-    set: (value: boolean) => emit('update:modelValue', value)
+    set: (value: boolean) => emit('update:modelValue', props.name, value)
   });
 
   // classObject

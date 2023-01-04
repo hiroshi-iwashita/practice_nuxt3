@@ -6,14 +6,11 @@
     id="modal"
     class="modal-toggle"
   />
-  <label
-    for="modal"
-    class="modal cursor-pointer flex flex-col"
-  >
+  <div class="modal flex flex-col">
     <div class="mb-4">Loading ...</div>
     <ElementsProgressBar v-if="type === 'bar'" />
     <ElementsProgressCircle v-if="type === 'circle'" />
-  </label>
+  </div>
 </template>
 
 <script lang="ts" setup>

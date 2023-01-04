@@ -9,6 +9,7 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 -  [Nuxt3のserver/apiとuseFetchを使用してShopifyへサーバーAPIリクエストを実装(2022.3.15)](https://blog.cloud-acct.com/posts/nuxt3-shopify-server-api-request)
 -  [Vue3 setup 記法を理解しつつ、 Nuxt で使うコンポーネントを色々作ってみる(2022.3.30)](https://zenn.dev/mewton/scraps/97941676cb7815)
 -  [【React/Vue.js】コンポーネント設計の（個人的）ベストプラクティス | Offers Tech Blog(2022.06.08)](https://zenn.dev/offers/articles/20220523-component-design-best-practice)
+-  [【JavaScript】お前はまだコレクション関数を知らない(2021.11.03)](https://zenn.dev/web_tips/articles/503da56f2ef8ab)
 
 ## docker install
 ---

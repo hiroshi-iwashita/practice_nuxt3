@@ -52,6 +52,7 @@
           :bodies="templatesTable.bodies"
         />
 
+
         <!-- photos -->
         <div
           v-if="type === 'photos'"

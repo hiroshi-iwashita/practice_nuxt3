@@ -12,15 +12,21 @@
       >
         {{ labelTop }}
       </span>
+      <span
+        v-if="isRequired"
+        class="label-text-alt"
+      >
+        Required
+      </span>
     </label>
     <input
       v-model.string="modelValue"
-      :type.string="type"
-      :name.string="name"
-      :placeholder.string="placeholder"
-      :required.boolean="isRequired"
-      :disabled.boolean="isDisabled"
-      class="input input-md bg-base-300 w-full"
+      :type="type"
+      :name="name"
+      :placeholder="placeholder"
+      :required="isRequired"
+      :disabled="isDisabled"
+      class="input input-md w-full"
     />
     <label
       v-if="labelBottom !== ''"
@@ -34,18 +40,20 @@
 </template>
 
 <script lang="ts" setup>
+  import { TElementsFormTextInput } from "~~/types/components/elements/form/TElementsFormTextInput";
+
   // prop
   interface Props {
-    modelValue: string;
-    type?: string;
-    name?: string;
-    labelTop?: string;
-    placeholder?: string;
-    isRequired?: boolean;
-    isDisabled?: boolean;
-    labelBottom?: string;
-    width?: string;
-    maxWidth?: string;
+    modelValue: TElementsFormTextInput['value'];
+    type?: TElementsFormTextInput['type'];
+    name?: TElementsFormTextInput['name'];
+    placeholder?: TElementsFormTextInput['placeholder'];
+    isRequired?: TElementsFormTextInput['isRequired'];
+    isDisabled?: TElementsFormTextInput['isDisabled'];
+    labelTop?: TElementsFormTextInput['labelTop'];
+    labelBottom?: TElementsFormTextInput['labelBottom'];
+    width?: TElementsFormTextInput['width'];
+    maxWidth?: TElementsFormTextInput['maxWidth'];
   }
 
   const props = withDefaults(
@@ -53,25 +61,25 @@
       modelValue: '',
       type: 'text',
       name: '',
-      labelTop: '',
       placeholder: 'Type here',
       isRequired: true,
       isDisabled: false,
+      labelTop: '',
       labelBottom: '',
       width: 'full',
-      maxWidth: 'xs'
+      maxWidth: 'xs',
     }
   );
 
   // emit
-  interface Emits {
-    (e: 'update:modelValue', text: string): void;
+  interface Emits { 
+    (e: 'update:modelValue', value: string): void;
   }
   const emit = defineEmits<Emits>();
 
   const modelValue = computed({
     get: () => props.modelValue,
-    set: (value: string) => emit('update:modelValue', value)
+    set: (value: string) => emit('update:modelValue', props.name, value)
   });
 
   // classObject

@@ -1,6 +1,8 @@
 <template>
   <div>
-    <TemplatesBreadcrumbs />
+    <TemplatesBreadcrumbs
+      :is-home="true"
+    />
 
     <!-- stats -->
     <div class="stats shadow">

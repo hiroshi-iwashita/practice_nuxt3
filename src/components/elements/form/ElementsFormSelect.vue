@@ -11,13 +11,19 @@
       >
         {{ labelTop }}
       </span>
+      <span
+        v-if="isRequired"
+        class="label-text-alt"
+      >
+        Required
+      </span>
     </label>
     <select
-      v-model.string="modelValue"
-      :name.string="name"
-      :required.boolean="isRequired"
-      :disabled.boolean="isDisabled"
-      class="select bg-base-300 w-full"
+      v-model="modelValue"
+      :name="name"
+      :required="isRequired"
+      :disabled="isDisabled"
+      class="select w-full"
     >
       <option
         disabled
@@ -27,11 +33,11 @@
         {{ placeholder }}
       </option>
       <option
-        v-for="(item, index) in options"
-        :key="index"
-        :value.string="item"
+        v-for="(option, value) in options"
+        :key="value"
+        :value="option.value"
       >
-        {{item}}
+        {{ option.text }}
       </option>
     </select>
     <label class="label">
@@ -43,18 +49,20 @@
 </template>
 
 <script lang="ts" setup>
+  import { TElementsFormSelect } from "~~/types/components/elements/form/TElementsFormSelect";
+
   // prop
   interface Props {
-    modelValue: string;
-    name: string;
-    options: string[];
-    labelTop?: string;
-    placeholder?: string;
-    isRequired?: boolean;
-    isDisabled?: boolean;
-    labelBottom?: string;
-    width?: string;
-    maxWidth?: string;
+    modelValue: TElementsFormSelect['value'];
+    name?: TElementsFormSelect['name'];
+    options: TElementsFormSelect['options'];
+    placeholder?: TElementsFormSelect['placeholder'];
+    isRequired?: TElementsFormSelect['isRequired'];
+    isDisabled?: TElementsFormSelect['isDisabled'];
+    labelTop?: TElementsFormSelect['labelTop'];
+    labelBottom?: TElementsFormSelect['labelBottom'];
+    width?: TElementsFormSelect['width'];
+    maxWidth?: TElementsFormSelect['maxWidth'];
   }
 
   const props = withDefaults(
@@ -62,10 +70,10 @@
       modelValue: '',
       name: '',
       options:() => [],
-      labelTop: '',
       placeholder: 'Pick one',
       isRequired: true,
       isDisabled: false,
+      labelTop: '',
       labelBottom: '',
       width: 'full',
       maxWidth: 'xs'
@@ -80,7 +88,7 @@
 
   const modelValue = computed({
     get: () => props.modelValue,
-    set: (value: string) => emit('update:modelValue', value)
+    set: (value: string) => emit('update:modelValue', props.name, value)
   });
 
   const placeholder = computed(() => {
