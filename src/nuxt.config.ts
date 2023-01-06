@@ -34,4 +34,7 @@ export default defineNuxtConfig({
         },
         apiBaseURL: ''
     },
+    modules: [
+        '@nuxt/content'
+    ],
 })
