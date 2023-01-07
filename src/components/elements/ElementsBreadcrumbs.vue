@@ -30,5 +30,4 @@
 
   // Dynamic components
   const NuxtLink = resolveComponent('NuxtLink')
-
 </script>
