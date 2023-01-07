@@ -29,14 +29,14 @@
 </template>
 
 <script lang="ts" setup>
-  import configs from "~~/configs/go";
+  import configs from "~~/configs/go/index";
   import { TElementsBreadCrumbs } from "~~/types/components/elements/breadCrumbs/TElementsBreadCrumbs";
   import { TElementsTab } from "~~/types/components/elements/tab/TElementsTab";
   import { TElementsMockupCode } from "~~/types/components/elements/mockup/code/TElementsMockupCode";
 
 
   definePageMeta({
-    layout: 'go',
+    layout: 'go'
   });
 
   // TemplatesBreadcrumbs
