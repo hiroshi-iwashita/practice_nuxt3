@@ -24,7 +24,7 @@
   );
 
   // class object 
-  const classObject = computed(() => {
+  const classObject = computed((): object => {
     return {
       // color
       'text-primary': props.color === 'primary',

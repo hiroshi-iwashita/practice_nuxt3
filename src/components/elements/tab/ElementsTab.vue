@@ -2,7 +2,6 @@
   <nuxt-link
     class="tab"
     :href="`#${value}`"
-    :id="value"
     :class="classObject"
   >
     {{ text }}

@@ -6,65 +6,76 @@
     /> <!-- TemplatesBreadcrumbs -->
 
     <p class="text-xl font-semibold tracking-wide">
-      Go installation
+      {{ page.title }}
     </p>
 
     <p class="text-sm tracking-wide my-4">
-      Select the tab for your computer's operating system below, then follow its installation instructions.
+      {{ page.description }}
     </p>
-
 
     <!-- TemplatesTabs -->
     <templates-tabs
       :items="tabsRef"
       :active-is="hashRef"
     /> <!-- TemplatesTabs -->
-
-    <TemplatesMockupCode
-      v-if="hashRef === '#mac'"
+    
+    <!-- PagesGoIndexInstallations -->
+    <pages-go-index-installations
       :items="mockupCodesRef"
-    />
+      :active-is="hashRef"
+    /> <!-- PagesGoIndexInstallations -->
 
   </div>
 </template>
 
 <script lang="ts" setup>
   import configs from "~~/configs/go/index";
+  // types
+  // for components
   import { TElementsBreadCrumbs } from "~~/types/components/elements/breadCrumbs/TElementsBreadCrumbs";
-  import { TElementsTab } from "~~/types/components/elements/tab/TElementsTab";
-  import { TElementsMockupCode } from "~~/types/components/elements/mockup/code/TElementsMockupCode";
-
+  import { TElementsTab } from "~~/types/components/elements/tab/TElementsTab"; // for components
+  // for pages
+  import { TTagsTerm } from "~~/types/pages/go/index/TTagsTerm";
+  import { TMockups } from "~~/types/pages/go/index/TMockups"; // for pages // types
 
   definePageMeta({
     layout: 'go'
   });
 
+  // page contents
+  // type
+  type pageContents = {
+    title: string;
+    description: string;    
+  };
+  const page = (configs.page) as pageContents;
+
   // TemplatesBreadcrumbs
-  const breadCrumbsRef = ref<TElementsBreadCrumbs[]>(configs.breadcrumbs);
+  const breadCrumbsRef = (configs.breadcrumbs) as TElementsBreadCrumbs[];
   // TemplatesBreadcrumbs
   
   // TemplatesTabs
-  const hashRef = ref<string>();
-  const tabsRef = ref<TElementsTab[]>(configs.tabs);
+  const hashRef = ref<TTagsTerm>();
+  const tabsRef = (configs.tabs) as TElementsTab[];
   // TemplatesTabs
 
   // TemplatesMockupCode
-  const mockupCodesRef = ref<TElementsMockupCode[]>(configs.mockupCodes);
+  const mockupCodesRef = (configs.mockupCodes) as TMockups;
   // TemplatesMockupCode
 
 
   // life cycle
-  const putHash = (hash: string) => {
-    if (hash == '') {
-      let firstTabValue: string = `#${tabsRef.value[0].value}`
+  const putHash = (routeHash: TTagsTerm): void => {
+    if (routeHash == '') {
+      let firstTabValue = `#${tabsRef[0].value}` as TTagsTerm
       hashRef.value = firstTabValue
     }
-    else hashRef.value = hash
+    else hashRef.value = routeHash
   }
 
   // onMounted
   onMounted(() => {
-    putHash(useRoute().hash)
+    putHash(useRoute().hash) // TTagsTermの型定義のうち、stringを使わないための見直し必要
   });
 
   // onBeforeRouteUpdate
