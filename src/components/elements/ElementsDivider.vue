@@ -1,5 +1,5 @@
 <template>
-  <div class="divider">
+  <div class="divider m-0">
     <slot></slot>
   </div>
 </template>

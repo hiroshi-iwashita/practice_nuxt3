@@ -35,6 +35,9 @@ export default defineNuxtConfig({
         apiBaseURL: ''
     },
     modules: [
-        '@nuxt/content'
+        // '@nuxt/content'
     ],
+    typescript: {
+        strict: true
+    }
 })
